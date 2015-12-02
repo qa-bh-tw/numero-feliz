@@ -1,3 +1,4 @@
+import org.junit.Ignore;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
@@ -19,6 +20,13 @@ public class VerificadorDeNumeroFelizTest {
     }
 
     @Test
+    public void deveSerFelizParaSete(){
+        VerificadorDeNumeroFeliz numeroFeliz = new VerificadorDeNumeroFeliz();
+        boolean ehFeliz = numeroFeliz.verificaNumeroFeliz(7);
+        assertTrue("7 deveria ser feliz", ehFeliz);
+    }
+
+    @Test
     public void deveSerFelizParaDez(){
         VerificadorDeNumeroFeliz numeroFeliz = new VerificadorDeNumeroFeliz();
         boolean ehFeliz = numeroFeliz.verificaNumeroFeliz(10);
@@ -26,10 +34,17 @@ public class VerificadorDeNumeroFelizTest {
     }
 
     @Test
-    public void deveSerFelizParaSete(){
+    public void deveSerFelizParaQuarentaENove(){
         VerificadorDeNumeroFeliz numeroFeliz = new VerificadorDeNumeroFeliz();
-        boolean ehFeliz = numeroFeliz.verificaNumeroFeliz(7);
-        assertTrue("7 deveria ser feliz", ehFeliz);
+        boolean ehFeliz = numeroFeliz.verificaNumeroFeliz(49);
+        assertTrue("49 deveria ser feliz", ehFeliz);
+    }
+
+    @Ignore
+    public void deveSerInfelizParaDois(){
+        VerificadorDeNumeroFeliz numeroFeliz = new VerificadorDeNumeroFeliz();
+        boolean ehInfeliz = numeroFeliz.verificaNumeroFeliz(2);
+        assertTrue("2 deveria ser infeliz", ehInfeliz);
     }
 
 }

@@ -2,22 +2,32 @@ import static java.lang.Math.pow;
 
 public class VerificadorDeNumeroFeliz {
 
-
     public boolean verificaNumeroFeliz(int numero) {
+        double candidato = numero;
 
-        double quadrado = pow(numero, 2);
-
-        double somaValores = somaValores(quadrado);
-
-        if (somaValores == 1) {
-            return true;
+        if (candidato < 10) {
+             candidato = pow(numero, 2);
         }
-        else {
-            double somaValoresSegundaIteracao = somaValores(somaValores);
-            if (somaValoresSegundaIteracao == 1) {
-                return true;
-            }
+
+        double valorSomado = somaValores(candidato);
+
+        while ((valorSomado != 1) && (valorSomado != numero)) {
+            valorSomado = somaValores(valorSomado);
         }
+
+        if ((valorSomado == numero) && (valorSomado != 1)){
+            return ehInfeliz(valorSomado);
+
+        }
+        return true;
+    }
+
+    private boolean ehInfeliz(double somaValores) {
+        /*
+        A ideia seria criar uma lista dos valores calculados,
+        caso se repetirem significa que o numero inicial nao eh feliz
+         */
+
         return false;
     }
 
