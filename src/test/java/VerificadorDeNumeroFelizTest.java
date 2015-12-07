@@ -40,11 +40,11 @@ public class VerificadorDeNumeroFelizTest {
         assertTrue("49 deveria ser feliz", ehFeliz);
     }
 
-    @Ignore
+    @Test
     public void deveSerInfelizParaDois(){
         VerificadorDeNumeroFeliz numeroFeliz = new VerificadorDeNumeroFeliz();
         boolean ehInfeliz = numeroFeliz.verificaNumeroFeliz(2);
-        assertTrue("2 deveria ser infeliz", ehInfeliz);
+        assertFalse("2 deveria ser infeliz", ehInfeliz);
     }
 
 }
