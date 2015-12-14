@@ -18,17 +18,13 @@ public class VerificadorDeNumeroFeliz {
             valorSomado = somaValores(candidato);
 
             if (!candidatos.add((int) valorSomado) && (valorSomado != 1)) {
-                return false;
+                return ehInfeliz(valorSomado);
             }
 
             candidato= valorSomado;
 
         } while ((valorSomado != 1) && (valorSomado != numero));
 
-        if ((valorSomado == numero) && (valorSomado != 1)) {
-            return ehInfeliz(valorSomado);
-
-        }
         return true;
     }
 
