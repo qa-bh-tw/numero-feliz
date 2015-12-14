@@ -15,6 +15,21 @@
             <scope>test</scope>
         </dependency>
     </dependencies>
-
-
+    <build>
+    <plugins>
+        <plugin>
+        <groupId>org.pitest</groupId>
+        <artifactId>pitest-maven</artifactId>
+        <version>1.1.7</version>
+            <configuration>
+                <targetClasses>
+                    <param>com.felicidade*</param>
+                </targetClasses>
+                <targetTests>
+                    <param>com.felicidade*</param>
+                </targetTests>
+            </configuration>
+        </plugin>
+    </plugins>
+    </build>
 </project>
