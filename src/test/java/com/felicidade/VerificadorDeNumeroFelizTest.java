@@ -1,4 +1,6 @@
-import org.junit.Ignore;
+package com.felicidade;
+
+import com.felicidade.VerificadorDeNumeroFeliz;
 import org.junit.Test;
 import static org.junit.Assert.*;
 

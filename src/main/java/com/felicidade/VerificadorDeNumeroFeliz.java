@@ -1,3 +1,5 @@
+package com.felicidade;
+
 import java.util.LinkedHashSet;
 
 import java.util.Set;
@@ -12,13 +14,6 @@ public class VerificadorDeNumeroFeliz {
         Set<Integer> candidatos = new LinkedHashSet<Integer>();
         candidatos.add(numero);
 
-
-        if (candidato < 10) {
-            candidato = pow(numero, 2);
-            candidatos.add((int) candidato);
-        }
-
-
         do {
             valorSomado = somaValores(candidato);
 
@@ -29,8 +24,6 @@ public class VerificadorDeNumeroFeliz {
             candidato= valorSomado;
 
         } while ((valorSomado != 1) && (valorSomado != numero));
-
-
 
         if ((valorSomado == numero) && (valorSomado != 1)) {
             return ehInfeliz(valorSomado);
