@@ -1,18 +1,9 @@
 package com.felicidade;
 
-import com.felicidade.VerificadorDeNumeroFeliz;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
 public class VerificadorDeNumeroFelizTest {
-
-    @Test
-    public void verificaQuebraDe10(){
-        VerificadorDeNumeroFeliz numeroFeliz = new VerificadorDeNumeroFeliz();
-        int arrayRetorno[] = numeroFeliz.quebraNumero(10);
-        assertEquals(1, arrayRetorno[0]);
-        assertEquals(0, arrayRetorno[1]);
-    }
 
     @Test
     public void deveSerFelizParaUm(){
@@ -49,4 +40,17 @@ public class VerificadorDeNumeroFelizTest {
         assertFalse("2 deveria ser infeliz", ehInfeliz);
     }
 
+    @Test
+    public void deveSerInfelizParaCentoEVinteECinco() {
+        VerificadorDeNumeroFeliz numeroFeliz = new VerificadorDeNumeroFeliz();
+        boolean ehInfeliz = numeroFeliz.verificaNumeroFeliz(125);
+        assertFalse("125 deveria ser infeliz", ehInfeliz);
+    }
+
+    @Test
+    public void deveSerFelizParaQuarentaENoveNegativo(){
+        VerificadorDeNumeroFeliz numeroFeliz = new VerificadorDeNumeroFeliz();
+        boolean ehFeliz = numeroFeliz.verificaNumeroFeliz(-49);
+        assertTrue("-49 deveria ser feliz", ehFeliz);
+    }
 }
