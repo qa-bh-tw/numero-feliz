@@ -16,6 +16,10 @@ public class VerificadorDeNumeroFeliz {
         Set<Integer> candidatos = new LinkedHashSet<Integer>();
         candidatos.add(numero);
 
+        if(numero <= 0) {
+            return false;
+        }
+
         do {
             valorSomado = somaValores(candidato);
 

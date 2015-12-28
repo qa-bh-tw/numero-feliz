@@ -1,6 +1,8 @@
 package com.felicidade;
 
 import org.junit.Test;
+
+import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.*;
 
 public class VerificadorDeNumeroFelizTest {
@@ -51,6 +53,6 @@ public class VerificadorDeNumeroFelizTest {
     public void deveSerFelizParaQuarentaENoveNegativo(){
         VerificadorDeNumeroFeliz numeroFeliz = new VerificadorDeNumeroFeliz();
         boolean ehFeliz = numeroFeliz.verificaNumeroFeliz(-49);
-        assertTrue("-49 deveria ser feliz", ehFeliz);
+        assertThat(ehFeliz, is(false));
     }
 }
