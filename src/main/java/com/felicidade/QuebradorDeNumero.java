@@ -3,8 +3,8 @@ package com.felicidade;
 public class QuebradorDeNumero {
 
     public int[] quebraNumero(int numero) {
-        if (numero <= 9 ){
-            throw  new IllegalArgumentException("Numero deve ser maior que nove");
+        if (numero <= 0 ){
+           throw new IllegalArgumentException("Numero deve ser maior que nove");
         }
         int[] resultado = new int[numero];
         String valorString = String.valueOf(numero);

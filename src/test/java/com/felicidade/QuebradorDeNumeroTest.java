@@ -36,10 +36,10 @@ public class QuebradorDeNumeroTest {
 
     @Test
     public void quebraQuandoNumerosMenorQueDez() {
-        expectedException.expect(IllegalArgumentException.class);
-        expectedException.expectMessage("Numero deve ser maior que nove");
 
-        quebradorDeNumero.quebraNumero(8);
+        int arrayRetorno[] = quebradorDeNumero.quebraNumero(8);
+
+        assertEquals(8, arrayRetorno[0]);
 
     }
 
