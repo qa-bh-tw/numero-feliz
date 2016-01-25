@@ -47,10 +47,4 @@ public class VerificadorDeNumeroFeliz {
         return somaValores;
     }
 
-
-    public int[] quebraNumero(int numero) {
-
-        return quebradorDeNumero.quebraNumero(numero);
-    }
-
 }

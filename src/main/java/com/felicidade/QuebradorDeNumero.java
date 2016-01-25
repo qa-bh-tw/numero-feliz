@@ -5,8 +5,8 @@ import static java.lang.Character.getNumericValue;
 public class QuebradorDeNumero {
 
     public int[] quebraNumero(int numero) {
-        if (numero <= 0 ){
-           throw new IllegalArgumentException("Numero deve ser maior que zero");
+        if (numero < 0 ){
+           throw new IllegalArgumentException("Numero deve ser maior ou igual a zero");
         }
 
         String numeroEmString = String.valueOf(numero);

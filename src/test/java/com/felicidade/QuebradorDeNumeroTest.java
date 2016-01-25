@@ -29,18 +29,16 @@ public class QuebradorDeNumeroTest {
     @Test
     public void verificaQuebraDe10Negativo(){
         expectedException.expect(IllegalArgumentException.class);
-        expectedException.expectMessage("Numero deve ser maior que nove");
+        expectedException.expectMessage("Numero deve ser maior ou igual a zero");
 
         quebradorDeNumero.quebraNumero(-10);
     }
 
     @Test
     public void verificaQuebraDeNumerosMenorQueDez() {
-
         int arrayRetorno[] = quebradorDeNumero.quebraNumero(8);
 
         assertEquals(8, arrayRetorno[0]);
-
     }
 
     @Test
@@ -56,6 +54,13 @@ public class QuebradorDeNumeroTest {
         int arrayRetorno[] = quebradorDeNumero.quebraNumero(11);
 
         assertEquals(2, arrayRetorno.length);
+    }
+
+    @Test
+    public void verificaQuebraNumeroQuandoZero(){
+        int arrayRetorno[] = quebradorDeNumero.quebraNumero(0);
+
+        assertEquals(0, arrayRetorno[0]);
     }
 
 }
