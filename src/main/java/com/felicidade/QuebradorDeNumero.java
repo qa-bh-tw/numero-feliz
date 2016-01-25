@@ -6,7 +6,8 @@ public class QuebradorDeNumero {
         if (numero <= 0 ){
            throw new IllegalArgumentException("Numero deve ser maior que nove");
         }
-        int[] resultado = new int[numero];
+        int tamanhoVetor = String.valueOf(numero).length();
+        int[] resultado = new int[tamanhoVetor];
         String valorString = String.valueOf(numero);
         int i = valorString.length();
         for (int j = 0; j < i; j++) {

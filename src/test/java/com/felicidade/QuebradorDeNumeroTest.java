@@ -35,7 +35,7 @@ public class QuebradorDeNumeroTest {
     }
 
     @Test
-    public void quebraQuandoNumerosMenorQueDez() {
+    public void verificaQuebraDeNumerosMenorQueDez() {
 
         int arrayRetorno[] = quebradorDeNumero.quebraNumero(8);
 
@@ -50,5 +50,12 @@ public class QuebradorDeNumeroTest {
         assertEquals(1, arrayRetorno[0]);
         assertEquals(1, arrayRetorno[1]);
     }
-    
+
+    @Test
+    public void verificaTamanhoVetorNumerosCalculados(){
+        int arrayRetorno[] = quebradorDeNumero.quebraNumero(11);
+
+        assertEquals(2, arrayRetorno.length);
+    }
+
 }
