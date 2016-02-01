@@ -8,7 +8,13 @@ import static java.lang.Math.pow;
 
 public class VerificadorDeNumeroFeliz {
 
-    private final QuebradorDeNumero quebradorDeNumero = new QuebradorDeNumero();
+    private final QuebradorDeNumero quebradorDeNumero;
+    private final SomadorDeQuadrado somadorDeQuadrado;
+
+    public VerificadorDeNumeroFeliz() {
+        quebradorDeNumero = new QuebradorDeNumero();
+        somadorDeQuadrado = new SomadorDeQuadrado();
+    }
 
     public boolean verificaNumeroFeliz(int numero) {
         double candidato = numero;
@@ -16,35 +22,22 @@ public class VerificadorDeNumeroFeliz {
         Set<Integer> candidatos = new LinkedHashSet<Integer>();
         candidatos.add(numero);
 
-        if(numero <= 0) {
+        if (numero <= 0) {
             return false;
         }
 
         do {
-            valorSomado = somaValores(candidato);
+            valorSomado = somadorDeQuadrado.transformaListaEmDouble(candidato);
 
             if (!candidatos.add((int) valorSomado) && (valorSomado != 1)) {
                 return false;
             }
 
-            candidato= valorSomado;
+            candidato = valorSomado;
 
         } while ((valorSomado != 1) && (valorSomado != numero));
 
         return true;
-    }
-
-    private double somaValores(double quadrado) {
-        Double d = new Double(quadrado);
-
-        int valorArray[] = quebradorDeNumero.quebraNumero(d.intValue());
-
-        double somaValores = 0;
-
-        for (int i = 0; i < valorArray.length; i++) {
-            somaValores += pow(valorArray[i], 2);
-        }
-        return somaValores;
     }
 
 }
