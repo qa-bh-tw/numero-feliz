@@ -17,7 +17,7 @@ public class VerificadorDeNumeroFelizTest {
     @Test
     public void deveSerFelizParaSete(){
         VerificadorDeNumeroFeliz numeroFeliz = new VerificadorDeNumeroFeliz();
-        boolean ehFeliz = numeroFeliz.verificaNumeroFeliz(-2);
+        boolean ehFeliz = numeroFeliz.verificaNumeroFeliz(7);
         assertTrue("7 deveria ser feliz", ehFeliz);
     }
 
@@ -52,7 +52,7 @@ public class VerificadorDeNumeroFelizTest {
     @Test
     public void deveSerFelizParaQuarentaENoveNegativo(){
         VerificadorDeNumeroFeliz numeroFeliz = new VerificadorDeNumeroFeliz();
-        boolean ehFeliz = numeroFeliz.verificaNumeroFeliz(-1);
+        boolean ehFeliz = numeroFeliz.verificaNumeroFeliz(-49);
         assertThat(ehFeliz, is(false));
     }
 
